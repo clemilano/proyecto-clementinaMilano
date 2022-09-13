@@ -9,9 +9,9 @@ const arrayProduct = [
     { nombre: "Galletas Salvado", gramos: 350, marca: "El trigal", precio: 119, id: 8},
     { nombre: "Salamin al vacio Centenario", gramos: 180, marca: "Centenario", precio: 135, id: 9},
 ];
-let carrito = []
+let carrito = [];
 
-let seleccion = prompt("Bienvenido a Almacen Silvhana, selecciona yes or not si deseas llenar tu carrito.")
+let seleccion = prompt("Bienvenido a Almacen Silvhana, selecciona yes or not si deseas llenar tu carrito.");
 
 while (seleccion != "yes" && seleccion != "not"){
     alert("Por favor ingrese yes or not")
@@ -21,7 +21,7 @@ while (seleccion != "yes" && seleccion != "not"){
 if(seleccion == "yes"){
     alert("Aqui tienes nuestra lista de productos")
     let todosLosProductos = arrayProduct.map(
-        (arrayProduct) => arrayProduct.nombre + " " + arrayProduct.gramos + " " + arrayProduct.marca + " " + arrayProduct.precio + "$"
+        (arrayProduct) => arrayProduct.nombre + " " + arrayProduct.gramos + " " + arrayProduct.marca + " " + arrayProduct.precio + " " + arrayProduct.id + " "
     );
     alert(todosLosProductos.join(" - "))
 } else if (seleccion == "not"){
@@ -37,38 +37,47 @@ while(seleccion != "not"){
             case "Dulce de leche dietetico":
             /*gramos = 500
             marca = "Los nietitos"*/
+            id = 1
             precio = 208
             break;
 
             case "Dulce de batara sin azucar":
+            id = 2
             precio = 69
             break;
             
             case "Mermelada de frutilla":
+            id = 3
             precio = 78
             break;
 
             case "Dulce de membrillo":
+            id = 4
             precio = 69
             break;
 
             case "Manteca Conaprole":
+            id = 5
             precio = 50
             break;
 
             case "Galletas Paninna":
+            id = 6
             precio = 99
             break;
 
             case "Galletas Sin Azucar":
+            id = 7
             precio = 105
             break;
 
             case "Galletas Salvado":
+            id = 8
             precio = 119
             break;
 
             case "Salamin al vacio Centenario":
+            id = 9
             precio = 135
             break;
             default:
@@ -98,6 +107,6 @@ while(seleccion != "not"){
 }
 
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
-console.log("El costo total de su compra es: ${}")
+console.log("El costo total de su compra es: $")
 
 
