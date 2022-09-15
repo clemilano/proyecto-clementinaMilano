@@ -100,13 +100,13 @@ while(seleccion != "not"){
         carrito.forEach((carritoFinal) => {
             console.log( `arrayProduct: ${carritoFinal.arrayProduct}, unidades: ${carritoFinal.cantidad}, Total a pagar ${carritoFinal.cantidad * carritoFinal.precio}`)
         })
-        
+
     } else{
         alert("No hay en stock")
     }
 }
 
-const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
-console.log("El costo total de su compra es: $")
+const total = carrito.reduce((acc, el) => acc + el.precio + el.unidades, 0)
+console.log(`El costo total de su compra es: ${total}`)
 
 
